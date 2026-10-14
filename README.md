@@ -1,27 +1,51 @@
-# Skills (MD-first)
+# Skills
 
-This repository is now organized in an "MD-first" style, benchmarked against https://github.com/mattpocock/skills.
+This repository is organized as an MD-first skills library, following the same structure used by benchmark repos such as:
 
-Structure now follows a simple pattern familiar to other skills repos:
+- https://github.com/mattpocock/skills
 
-- skills/
-  - state-gatekeeper/
-    - SKILL.md
-  - diagnostician/
-    - SKILL.md
-- README.md
+The goal is to keep each skill easy to read, easy to share, and easy to extend.
 
-What I changed:
-- Added `skills/*/SKILL.md` files for the two skills (State Gatekeeper and Diagnostician) with full workflow and implementation guidance.
-- Converted the previous flat markdown into the per-skill directory format.
+## Structure
 
-Notes about scripts/prototypes:
-- You said "没必要做出脚本" — I kept the prototype TypeScript files in `src/` and package files in the repo for now so you can reuse them later if desired. If you want them removed, say "remove prototypes" and I'll delete them.
-- This repo's primary interface is the markdown skill files — they are the canonical source of truth.
+```text
+README.md
+SKILL_TEMPLATE.md
+skills/
+  state-gatekeeper/
+    SKILL.md
+  diagnostician/
+    SKILL.md
+```
 
-Next steps (pick one):
-- Keep as-is (MD-first, prototypes kept as optional).
-- Remove all code/prototype files (I will delete `src/`, package.json, tsconfig.json, and other build files).
-- Add CONTRIBUTING.md and a SKILL_TEMPLATE.md to standardize future skills (I can add these).
+## How this repo works
 
-If you want me to proceed with any of the next steps above, tell me which. Otherwise I consider this change complete and will not modify other files.
+- Each skill lives in its own folder under `skills/`
+- Each skill file is named `SKILL.md`
+- The skill description should include:
+  - trigger conditions
+  - objective
+  - workflow
+  - output format
+  - rules and constraints
+  - optional notes for future refinement
+
+## Why MD-first
+
+This format is useful because it is:
+
+- easy to browse on GitHub
+- easy to share with others
+- simple to fork and remix
+- consistent with public skill repos
+
+## Adding a new skill
+
+1. Create a new folder under `skills/`
+2. Add a `SKILL.md` file
+3. Copy the structure from `SKILL_TEMPLATE.md`
+4. Update this README only if you want to add a new category or note
+
+## Notes
+
+This repository is intentionally centered on markdown skills. If you later decide to add code, scripts, or automation, that can be added in a separate layer without changing the core skill format.
